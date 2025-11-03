@@ -31,9 +31,10 @@
   </script>
 <style>
     .glassmorphism {
-      background-color: rgba(25, 16, 34, 0.25);
-      -webkit-backdrop-filter: blur(30px);
-      backdrop-filter: blur(30px);
+      /* Transparência aumentada em 50% (opacidade reduzida para 0.25) */
+      background-color: rgba(25, 16, 34, 0.25); /* Agora este será o fundo inicial que borra a imagem */
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
     }
     body {
       min-height: 100vh;
@@ -53,9 +54,9 @@
       
       <div class="h-[500px] flex-shrink-0"></div>
 
-      <div class="relative z-10 flex w-full flex-col -mt-[100px] bg-background-light dark:bg-background-dark group/design-root">
+      <div class="absolute top-[400px] left-0 right-0 h-[100px] z-20 glassmorphism [mask-image:linear-gradient(to_bottom,transparent_0%,black_100%)] rounded-t-2xl"></div>
 
-        <div class="absolute inset-0 glassmorphism [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%)] rounded-t-2xl"></div>
+      <div class="relative z-10 flex w-full flex-col -mt-[100px] bg-background-light dark:bg-background-dark group/design-root">
 
         <div class="relative z-10 flex flex-col p-6 text-white">
           
