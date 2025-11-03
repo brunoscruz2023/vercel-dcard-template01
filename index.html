@@ -36,19 +36,14 @@
       backdrop-filter: blur(20px);
     }
     body {
-      /* Garante que o body ocupe a altura total da viewport (tela visível) */
       min-height: 100vh;
-    }
-    /* Classe para remover bordas do contêiner principal */
-    .no-borders {
-      border-radius: 0 !important;
     }
   </style>
   </head>
 <body class="font-display">
-  <div class="flex justify-center items-stretch bg-zinc-800 p-4 min-h-screen">
+  <div class="flex justify-center items-start bg-zinc-800 p-4 min-h-screen max-h-[1200px]">
   
-  <div class="relative w-[390px] h-full no-borders overflow-hidden">
+  <div class="relative sticky top-0 w-[390px] h-screen overflow-hidden">
     
     <div class="absolute inset-0 w-full h-full z-0">
       <div class="h-full w-full bg-center bg-no-repeat bg-cover" data-alt="Close-up of a relaxing massage session, with hands gently working on a person's back." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBz3aE490yppp7OlrNiFfQYzdJf1UQWu11fGo8yrsx7VDPToVGwugP3YsG5iOV2R_We1tEi8SwD89on2SowuXmjFJ3uf1WJpN8FYrUww0XEGcUEoMEtokd3k6MdrUVy0SEOHjCGal96XE4d-5CZXSwpB9S-ZImoztE-GA5KSFmk8aPaQUnTQOT5dreJ_XHD5n-O4F_VWL1309eylcQ5mcyR9mwat-tTTvmHbxAE8CTqZzzpsbtLw3z-QNkz4L_YZSYLx-tlU9kCQ69u");'></div>
