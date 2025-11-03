@@ -36,26 +36,24 @@
       backdrop-filter: blur(20px);
     }
     body {
-      min-height: max(884px, 100dvh);
-    }
-    /* Removendo a borda arredondada do contêiner do "device" */
-    .no-borders {
-      border-radius: 0 !important; /* !important para garantir que sobreponha */
+      min-height: 100vh; /* Ajusta a altura mínima do body para a tela cheia */
     }
   </style>
   </head>
 <body class="font-display">
-<div class="flex justify-center items-start bg-zinc-800 p-4 min-h-screen">
-  <div class="relative overflow-y-auto no-borders" style="width: 390px; height: 844px;">
-  <div class="relative w-full flex flex-col bg-background-light dark:bg-background-dark group/design-root">
+<div class="flex justify-center items-stretch bg-zinc-800 p-4 min-h-screen">
+  <div class="relative w-[390px] h-full flex flex-col no-borders">
     
-    <div class="sticky top-0 h-[500px] w-full z-0">
+    <div class="absolute inset-0 w-full h-full z-0">
       <div class="h-full w-full bg-center bg-no-repeat bg-cover" data-alt="Close-up of a relaxing massage session, with hands gently working on a person's back." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBz3aE490yppp7OlrNiFfQYzdJf1UQWu11fGo8yrsx7VDPToVGwugP3YsG5iOV2R_We1tEi8SwD89on2SowuXmjFJ3uf1WJpN8FYrUww0XEGcUEoMEtokd3k6MdrUVy0SEOHjCGal96XE4d-5CZXSwpB9S-ZImoztE-GA5KSFmk8aPaQUnTQOT5dreJ_XHD5n-O4F_VWL1309eylcQ5mcyR9mwat-tTTvmHbxAE8CTqZzzpsbtLw3z-QNkz4L_YZSYLx-tlU9kCQ69u");'></div>
     </div>
 
-    <div class="relative z-10 flex w-full flex-col -mt-[100px]">
+    <div class="relative z-10 flex w-full h-full flex-col overflow-y-auto">
+      
       <div class="absolute inset-0 glassmorphism [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%)] rounded-t-2xl"></div>
       
+      <div class="h-[500px] flex-shrink-0"></div>
+
       <div class="relative z-10 flex flex-col p-6 text-white">
         
         <div class="flex flex-col mb-4">
@@ -130,9 +128,8 @@
             </a>
           </div>
         </div>
-        </div>
+        <div class="h-[150px]"></div> </div>
     </div>
   </div>
-</div>
 </div>
 </body></html>
