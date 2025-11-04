@@ -36,13 +36,13 @@
     /* Estilo para a div de baixo, que contém o efeito */
     .content-with-feather {
       /* Gradiente de fundo de baixo para cima (60% para 100% de transparência) */
-      background-image: linear-gradient(to top, rgba(25, 16, 34, 1), rgba(25, 16, 34, 0)); 
-      /* Mantido: Efeito de vidro fosco (glassmorphism) 
-      -webkit-backdrop-filter: blur(50px);
-      backdrop-filter: blur(50px); */
+      background-image: linear-gradient(to top, rgba(25, 16, 34, 1), rgba(25, 16, 34, 1), rgba(25, 16, 34, 1), rgba(25, 16, 34, 0.5), rgba(25, 16, 34, 0)); 
+      /* Mantido: Efeito de vidro fosco (glassmorphism) */
+      -webkit-backdrop-filter: blur(10px) border: 0px;
+      backdrop-filter: blur(10px) border: 0px; 
       /* CORREÇÃO FINAL: Efeito feather mais suave e alongado para eliminar a borda 
-      -webkit-mask-image: linear-gradient(to_top, transparent 0%, black 60%);
-      mask-image: linear-gradient(to_top, transparent 0%, black 60%);
+      -webkit-mask-image: linear-gradient(to_top, transparent 0%, black 80%);
+      mask-image: linear-gradient(to_top, transparent 0%, black 80%);
     } */
   </style>
   </head>
