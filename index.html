@@ -38,8 +38,8 @@
       /* Gradiente de fundo de baixo para cima (60% para 100% de transparência) */
       background-image: linear-gradient(to top, rgba(25, 16, 34, 1), rgba(25, 16, 34, 1), rgba(25, 16, 34, 1), rgba(25, 16, 34, 0.5), rgba(25, 16, 34, 0)); 
       /* Mantido: Efeito de vidro fosco (glassmorphism) */
-      -webkit-backdrop-filter: blur(10px) border: 0px;
-      backdrop-filter: blur(10px) border: 0px; 
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(3px); 
       /* CORREÇÃO FINAL: Efeito feather mais suave e alongado para eliminar a borda 
       -webkit-mask-image: linear-gradient(to_top, transparent 0%, black 80%);
       mask-image: linear-gradient(to_top, transparent 0%, black 80%);
@@ -60,19 +60,15 @@
       <!-- 1. Espaçador para empurrar o conteúdo para a metade da tela -->
       <div style="height: 422px;"></div>
 
-      <!-- INÍCIO DA ESTRUTURA COM 2 DIVS -->
-      
-      <!-- DIV 1: Apenas o nome e descrição, sem fundo ou efeitos -->
-      <div class="px-6 pt-12 text-white">
-        <div class="flex flex-col mb-4">
-          <h1 class="text-white tracking-light text-[32px] font-bold leading-tight">JMA Terapeuta Holística Integrativa</h1>
-          <p class="text-white/80 text-base font-normal leading-normal pt-1">Massoterapeuta</p>
-        </div>
-      </div>
-
-      <!-- DIV 2: O resto do conteúdo com o fundo gradiente e o efeito feather -->
+      <!-- DIV ÚNICA: Conteúdo unificado com o fundo gradiente e o efeito feather -->
       <div class="content-with-feather rounded-t-2xl">
-        <div class="flex flex-col p-6 pt-4 text-white">
+        <div class="flex flex-col p-6 pt-12 text-white">
+          
+          <!-- Conteúdo movido da DIV anterior -->
+          <div class="flex flex-col mb-4">
+            <h1 class="text-white tracking-light text-[32px] font-bold leading-tight">JMA Terapeuta Holística Integrativa</h1>
+            <p class="text-white/80 text-base font-normal leading-normal pt-1">Massoterapeuta</p>
+          </div>
           
           <div class="flex w-full gap-3 py-3">
             <button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] gap-2">
