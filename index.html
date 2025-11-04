@@ -44,6 +44,25 @@
       -webkit-mask-image: linear-gradient(to_top, transparent 0%, black 80%);
       mask-image: linear-gradient(to_top, transparent 0%, black 80%);
     } */
+    
+    /* ESTILOS PARA O ACCORDION - VERSÃO 1 (max-height) */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+    }
+    .accordion-item.is-open .accordion-content {
+      max-height: 200px; /* Altura suficiente para 3 linhas de texto */
+      transition: max-height 0.4s ease-in;
+    }
+    
+    /* ESTILOS COMUNS */
+    .accordion-icon {
+      transition: transform 0.3s ease;
+    }
+    .accordion-item.is-open .accordion-icon {
+      transform: rotate(90deg);
+    }
   </style>
   </head>
 <body class="font-display">
@@ -85,32 +104,83 @@
           <div class="my-2"></div>
           <div>
             <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-2">Services</h3>
+            
+            <!-- INÍCIO DA LISTA ACCORDIAN -->
             <div class="flex flex-col gap-2">
-              <div class="flex w-full items-center justify-between rounded-lg bg-white/10 p-4">
-                <span class="text-white text-base font-medium">Massagem Relaxante</span>
-                <span class="material-symbols-outlined text-white/70">expand_more</span>
+              <!-- Item 1 -->
+              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+                  <span class="text-white text-base font-medium">Massagem Relaxante</span>
+                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="px-4 pb-4">
+                    <p class="text-white/80 text-sm my-0 leading-tight">Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex w-full items-center justify-between rounded-lg bg-white/10 p-4">
-                <span class="text-white text-base font-medium">Massagem Terapêutica</span>
-                <span class="material-symbols-outlined text-white/70">expand_more</span>
+              <!-- Item 2 -->
+              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+                  <span class="text-white text-base font-medium">Massagem Terapêutica</span>
+                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="px-4 pb-4">
+                    <p class="text-white/80 text-sm my-0 leading-tight">Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex w-full items-center justify-between rounded-lg bg-white/10 p-4">
-                <span class="text-white text-base font-medium">Shiatsu</span>
-                <span class="material-symbols-outlined text-white/70">expand_more</span>
+              <!-- Item 3 -->
+              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+                  <span class="text-white text-base font-medium">Shiatsu</span>
+                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="px-4 pb-4">
+                    <p class="text-white/80 text-sm my-0 leading-tight">Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex w-full items-center justify-between rounded-lg bg-white/10 p-4">
-                <span class="text-white text-base font-medium">Reiki</span>
-                <span class="material-symbols-outlined text-white/70">expand_more</span>
+              <!-- Item 4 -->
+              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+                  <span class="text-white text-base font-medium">Reiki</span>
+                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="px-4 pb-4">
+                    <p class="text-white/80 text-sm my-0 leading-tight">Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex w-full items-center justify-between rounded-lg bg-white/10 p-4">
-                <span class="text-white text-base font-medium">Aromaterapia</span>
-                <span class="material-symbols-outlined text-white/70">expand_more</span>
+              <!-- Item 5 -->
+              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+                  <span class="text-white text-base font-medium">Aromaterapia</span>
+                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="px-4 pb-4">
+                    <p class="text-white/80 text-sm my-0 leading-tight">Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex w-full items-center justify-between rounded-lg bg-white/10 p-4">
-                <span class="text-white text-base font-medium">Reflexologia</span>
-                <span class="material-symbols-outlined text-white/70">expand_more</span>
+              <!-- Item 6 -->
+              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+                  <span class="text-white text-base font-medium">Reflexologia</span>
+                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="px-4 pb-4">
+                    <p class="text-white/80 text-sm my-0 leading-tight">Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral.</p>
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- FIM DA LISTA ACCORDIAN -->
           </div>
           <div class="my-2"></div>
           <div class="mt-auto min-h-[200px]">
@@ -143,4 +213,28 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const accordionItem = header.parentElement;
+        const isOpen = accordionItem.classList.contains('is-open');
+
+        // Fecha todos os itens
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('is-open');
+        });
+
+        // Abre o item clicado se ele não estava aberto
+        if (!isOpen) {
+          accordionItem.classList.add('is-open');
+        }
+      });
+    });
+  });
+</script>
+
 </body></html>
