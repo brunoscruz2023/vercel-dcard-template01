@@ -47,7 +47,7 @@
     },
     {
       "platform": "instagram",
-      "url": "https://www.instagram.com/seuperfil",
+      "url": "https://www.instagram.com/jannedymoreira",
       "visible": true
     },
     {
@@ -57,15 +57,16 @@
     },
     {
       "platform": "google",
-      "url": "https://linktr.ee/seuperfil",
+      "url": "https://www.instagram.com/jannedymoreira?igsh=MTdzN3h6OXJlbmdhOA==",
       "visible": true
     },
     {
       "platform": "pinterest",
       "url": "https://www.pinterest.com/seuperfil",
-      "visible": true
+      "visible": false
     }
   ]
 }
+
 
 
