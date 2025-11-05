@@ -2,33 +2,39 @@
   "profile": {
     "title": "JMA Terapeuta Holística Integrativa",
     "description": "Massoterapeuta",
-    "phone": "5522981157710",
-    "whatsapp": "5522981157710"
+    "phone": "5511912345678",
+    "whatsapp": "5511912345678"
   },
   "services": [
     {
       "title": "Massagem Relaxante",
-      "description": "Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente."
+      "description": "Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente.",
+      "visible": true
     },
     {
       "title": "Massagem Terapêutica",
-      "description": "Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade."
+      "description": "Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade.",
+      "visible": true
     },
     {
       "title": "Shiatsu",
-      "description": "Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural."
+      "description": "Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural.",
+      "visible": false
     },
     {
       "title": "Reiki",
-      "description": "Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital."
+      "description": "Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital.",
+      "visible": false
     },
     {
       "title": "Aromaterapia",
-      "description": "Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente."
+      "description": "Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente.",
+      "visible": true
     },
     {
       "title": "Reflexologia",
-      "description": "Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral."
+      "description": "Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral.",
+      "visible": true
     }
   ],
   "social_media": {
@@ -38,4 +44,3 @@
     "google": "https://www.google.com/search?hl=pt-BR&gl=br&q=Jannedy+M.+Alves+-+Massoterapia+Integrativa+-+Av.+Saquarema,+3606+-+loja+01+-+Porto+da+Ro%C3%A7a,+Saquarema+-+RJ,+28991-350&ludocid=17695273551188887749&lsig=AB86z5Uwnfht9DIfFOQL_1Q0yNpI&ibp=gwp%3B0,7#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D"
   }
 }
-
