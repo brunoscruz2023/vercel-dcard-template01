@@ -86,7 +86,8 @@
 <body class="font-display">
 <div class="flex justify-center items-start bg-zinc-800 p-4 min-h-screen max-sm:p-0">
   <div class="relative rounded-xl overflow-hidden max-sm:rounded-none" style="width: 390px; height: 844px;" class="max-sm:w-full max-sm:h-[100dvh] max-sm:max-h-none">
-    <div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Close-up of a relaxing massage session, with hands gently working on a person's back." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBz3aE490yppp7OlrNiFfQYzdJf1UQWu11fGo8yrsx7VDPToVGwugP3YsG5iOV2R_We1tEi8SwD89on2SowuXmjFJ3uf1WJpN8FYrUww0XEGcUEoMEtokd3k6MdrUVy0SEOHjCGal96XE4d-5CZXSwpB9S-ZImoztE-GA5KSFmk8aPaQUnTQOT5dreJ_XHD5n-O4F_VWL1309eylcQ5mcyR9mwat-tTTvmHbxAE8CTqZzzpsbtLw3z-QNkz4L_YZSYLx-tlU9kCQ69u");'></div>
+    <!-- Atributo style removido e id adicionado -->
+    <div id="background-container" class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Close-up of a relaxing massage session, with hands gently working on a person's back."></div>
     <div class="relative h-full overflow-y-auto z-10">
       <div style="height: 422px;"></div>
       <div class="content-with-feather rounded-t-2xl">
@@ -110,7 +111,6 @@
             </a>
           </div>
 
-          <!-- Elemento de Endereço Adicionado -->
           <p id="profile-address" class="text-white/80 text-sm font-normal leading-normal pt-2 flex items-center gap-1"></p>
 
           <div class="my-2"></div>
@@ -159,6 +159,15 @@ document.addEventListener('DOMContentLoaded', function () {
       return response.json();
     })
     .then(data => {
+      // ==========================================================
+      // BLOCO DE IMAGEM DE FUNDO DINÂMICA (NOVO)
+      // Define a imagem de fundo usando a URL do JSON.
+      // ==========================================================
+      const backgroundElement = document.getElementById('background-container');
+      if (backgroundElement && data.profile.background_image_url) {
+        backgroundElement.style.backgroundImage = `url('${data.profile.background_image_url}')`;
+      }
+
       const profileTitleElement = document.getElementById('profile-title');
       const profileDescriptionElement = document.getElementById('profile-description');
 
@@ -185,7 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
         whatsappButton.target = '_blank';
       }
       
-      // Lógica para o endereço (NOVO)
       const addressElement = document.getElementById('profile-address');
       if (addressElement && data.profile.address) {
         const encodedAddress = encodeURIComponent(data.profile.address);
@@ -246,10 +254,6 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
       }
 
-      // ==========================================================
-      // BLOCO DE RENDERIZAÇÃO DAS REDES SOCIAIS (NOVO)
-      // Renderiza os links dinamicamente com base na visibilidade.
-      // ==========================================================
       const socialLinksContainer = document.getElementById('social-links-container');
       if (socialLinksContainer) {
         data.social_media.forEach(item => {
