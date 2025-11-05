@@ -33,38 +33,26 @@
     body {
       min-height: max(884px, 100dvh);
     }
-    /* Estilo para a div de baixo, que contém o efeito */
     .content-with-feather {
-      /* Gradiente de fundo de baixo para cima (60% para 100% de transparência) */
       background-image: linear-gradient(to top, rgba(25, 16, 34, 1), rgba(25, 16, 34, 1), rgba(25, 16, 34, 1), rgba(25, 16, 34, 0.5), rgba(25, 16, 34, 0)); 
-      /* Mantido: Efeito de vidro fosco (glassmorphism) */
       -webkit-backdrop-filter: blur(2px);
       backdrop-filter: blur(2px); 
-      /* CORREÇÃO FINAL: Efeito feather mais suave e alongado para eliminar a borda 
-      -webkit-mask-image: linear-gradient(to_top, transparent 0%, black 80%);
-      mask-image: linear-gradient(to_top, transparent 0%, black 80%);
-    } */
-    
-    /* ESTILOS PARA O ACCORDION - VERSÃO 1 (max-height) */
+    }
     .accordion-content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out;
     }
     .accordion-item.is-open .accordion-content {
-      max-height: 200px; /* Altura suficiente para 3 linhas de texto */
+      max-height: 200px;
       transition: max-height 0.4s ease-in;
     }
-    
-    /* ESTILOS COMUNS */
     .accordion-icon {
       transition: transform 0.3s ease;
     }
     .accordion-item.is-open .accordion-icon {
       transform: rotate(90deg);
     }
-
-    /* ESTILO PARA ÍCONES M3 EXPRESSIVE */
     .m3-icon-container {
       width: 40px;
       height: 40px;
@@ -78,8 +66,6 @@
     .m3-icon-container:hover {
       opacity: 0.8;
     }
-
-    /* CORREÇÃO FORÇADA PARA A FONTE DOS ÍCONES */
     .material-symbols-outlined {
       font-family: 'Material Symbols Outlined';
       font-weight: normal;
@@ -98,27 +84,18 @@
   </style>
   </head>
 <body class="font-display">
-<!-- Container com responsividade para mobile (mantido da alteração anterior) -->
 <div class="flex justify-center items-start bg-zinc-800 p-4 min-h-screen max-sm:p-0">
-  <!-- Container principal com tamanho fixo para desktop e responsivo para mobile -->
   <div class="relative rounded-xl overflow-hidden max-sm:rounded-none" style="width: 390px; height: 844px;" class="max-sm:w-full max-sm:h-[100dvh] max-sm:max-h-none">
-    
-    <!-- Fundo fixo (mantido da alteração anterior) -->
     <div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Close-up of a relaxing massage session, with hands gently working on a person's back." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBz3aE490yppp7OlrNiFfQYzdJf1UQWu11fGo8yrsx7VDPToVGwugP3YsG5iOV2R_We1tEi8SwD89on2SowuXmjFJ3uf1WJpN8FYrUww0XEGcUEoMEtokd3k6MdrUVy0SEOHjCGal96XE4d-5CZXSwpB9S-ZImoztE-GA5KSFmk8aPaQUnTQOT5dreJ_XHD5n-O4F_VWL1309eylcQ5mcyR9mwat-tTTvmHbxAE8CTqZzzpsbtLw3z-QNkz4L_YZSYLx-tlU9kCQ69u");'></div>
-
-    <!-- Estrutura para o efeito de rolagem da metade para cima -->
     <div class="relative h-full overflow-y-auto z-10">
-      <!-- 1. Espaçador para empurrar o conteúdo para a metade da tela -->
       <div style="height: 422px;"></div>
-
-      <!-- DIV ÚNICA: Conteúdo unificado com o fundo gradiente e o efeito feather -->
       <div class="content-with-feather rounded-t-2xl">
         <div class="flex flex-col p-6 pt-5 text-white">
           
-          <!-- Conteúdo movido da DIV anterior -->
+          <!-- Conteúdo dinâmico do perfil -->
           <div class="flex flex-col mb-4">
-            <h1 class="text-white tracking-light text-[32px] font-bold leading-tight">JMA Terapeuta Holística Integrativa</h1>
-            <p class="text-white/80 text-base font-normal leading-normal pt-1">Massoterapeuta</p>
+            <h1 id="profile-title" class="text-white tracking-light text-[32px] font-bold leading-tight"></h1>
+            <p id="profile-description" class="text-white/80 text-base font-normal leading-normal pt-1"></p>
           </div>
           
           <div class="flex w-full gap-3 py-3">
@@ -137,82 +114,9 @@
           <div>
             <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-2">Serviços</h3>
             
-            <!-- INÍCIO DA LISTA ACCORDIAN -->
-            <div class="flex flex-col gap-2">
-              <!-- Item 1 -->
-              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
-                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
-                  <span class="text-white text-base font-medium">Massagem Relaxante</span>
-                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
-                </button>
-                <div class="accordion-content">
-                  <div class="px-4 pb-4">
-                    <p class="text-white/80 text-sm my-0 leading-tight">Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 2 -->
-              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
-                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
-                  <span class="text-white text-base font-medium">Massagem Terapêutica</span>
-                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
-                </button>
-                <div class="accordion-content">
-                  <div class="px-4 pb-4">
-                    <p class="text-white/80 text-sm my-0 leading-tight">Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 3 -->
-              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
-                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
-                  <span class="text-white text-base font-medium">Shiatsu</span>
-                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
-                </button>
-                <div class="accordion-content">
-                  <div class="px-4 pb-4">
-                    <p class="text-white/80 text-sm my-0 leading-tight">Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 4 -->
-              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
-                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
-                  <span class="text-white text-base font-medium">Reiki</span>
-                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
-                </button>
-                <div class="accordion-content">
-                  <div class="px-4 pb-4">
-                    <p class="text-white/80 text-sm my-0 leading-tight">Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 5 -->
-              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
-                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
-                  <span class="text-white text-base font-medium">Aromaterapia</span>
-                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
-                </button>
-                <div class="accordion-content">
-                  <div class="px-4 pb-4">
-                    <p class="text-white/80 text-sm my-0 leading-tight">Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 6 -->
-              <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
-                <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
-                  <span class="text-white text-base font-medium">Reflexologia</span>
-                  <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
-                </button>
-                <div class="accordion-content">
-                  <div class="px-4 pb-4">
-                    <p class="text-white/80 text-sm my-0 leading-tight">Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral.</p>
-                  </div>
-                </div>
-              </div>
+            <div id="services-list-container" class="flex flex-col gap-2">
+              <!-- Os itens do accordion serão inseridos aqui pelo JavaScript -->
             </div>
-            <!-- FIM DA LISTA ACCORDIAN -->
           </div>
           <div class="my-2"></div>
           <div class="mt-auto min-h-[200px]">
@@ -255,26 +159,94 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
+// 1. FONTE DE DADOS DO PERFIL
+const profileData = {
+  title: "JMA Terapeuta Holística Integrativa",
+  description: "Massoterapeuta"
+};
 
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', () => {
-        const accordionItem = header.parentElement;
-        const isOpen = accordionItem.classList.contains('is-open');
+// 2. FONTE DE DADOS DOS SERVIÇOS
+const servicesData = [
+  {
+    title: "Massagem Relaxante",
+    description: "Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente."
+  },
+  {
+    title: "Massagem Terapêutica",
+    description: "Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade."
+  },
+  {
+    title: "Shiatsu",
+    description: "Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural."
+  },
+  {
+    title: "Reiki",
+    description: "Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital."
+  },
+  {
+    title: "Aromaterapia",
+    description: "Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente."
+  },
+  {
+    title: "Reflexologia",
+    description: "Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral."
+  }
+];
 
-        // Fecha todos os itens
-        document.querySelectorAll('.accordion-item').forEach(item => {
-          item.classList.remove('is-open');
-        });
+document.addEventListener('DOMContentLoaded', function () {
+  // 3. POVOAR O PERFIL DINÂMICO
+  const profileTitleElement = document.getElementById('profile-title');
+  const profileDescriptionElement = document.getElementById('profile-description');
 
-        // Abre o item clicado se ele não estava aberto
-        if (!isOpen) {
-          accordionItem.classList.add('is-open');
-        }
-      });
+  if (profileTitleElement) {
+    profileTitleElement.textContent = profileData.title;
+  }
+  if (profileDescriptionElement) {
+    profileDescriptionElement.textContent = profileData.description;
+  }
+
+  // 4. LÓGICA DINÂMICA PARA O ACCORDION
+  const servicesListContainer = document.getElementById('services-list-container');
+
+  function createAccordionItem(item) {
+    return `
+      <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+        <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+          <span class="text-white text-base font-medium">${item.title}</span>
+          <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+        </button>
+        <div class="accordion-content">
+          <div class="px-4 pb-4">
+            <p class="text-white/80 text-sm my-0 leading-tight">${item.description}</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (servicesListContainer) {
+    servicesData.forEach(item => {
+      servicesListContainer.innerHTML += createAccordionItem(item);
     });
+  }
+
+  // 5. LÓGICA DE EVENTOS (Event Delegation)
+  document.addEventListener('click', (event) => {
+    const header = event.target.closest('.accordion-header');
+    if (!header) return;
+
+    const accordionItem = header.parentElement;
+    const isOpen = accordionItem.classList.contains('is-open');
+
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      item.classList.remove('is-open');
+    });
+
+    if (!isOpen) {
+      accordionItem.classList.add('is-open');
+    }
   });
+});
 </script>
 
 </body></html>
