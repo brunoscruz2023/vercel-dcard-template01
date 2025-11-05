@@ -1,7 +1,9 @@
 {
   "profile": {
     "title": "JMA Terapeuta Holística Integrativa",
-    "description": "Massoterapeuta"
+    "description": "Massoterapeuta",
+    "phone": "5522981157710",
+    "whatsapp": "5522981157710"
   },
   "services": [
     {
@@ -28,5 +30,11 @@
       "title": "Reflexologia",
       "description": "Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral."
     }
-  ]
+  ],
+  "social_media": {
+    "facebook": "https://www.facebook.com/seuperfil",
+    "instagram": "https://www.instagram.com/seuperfil",
+    "linkedin": "https://www.linkedin.com/in/seuperfil",
+    "google": "https://linktr.ee/seuperfil"
+  }
 }
