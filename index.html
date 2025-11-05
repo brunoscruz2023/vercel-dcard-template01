@@ -81,12 +81,55 @@
       -webkit-font-feature-settings: 'liga';
       -webkit-font-smoothing: antialiased;
     }
+    /* ==========================================================
+     * ESTILOS DO LOGO FLUTUANTE (NOVO)
+     * ========================================================== */
+    #floating-logo-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 50;
+      width: 80px;
+      height: 80px;
+      transition: transform 0.2s ease-in-out;
+    }
+    #floating-logo-container:hover {
+      transform: scale(1.1);
+    }
+    #floating-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: white;
+      padding: 4px;
+      box-sizing: border-box;
+    }
+    .logo-round {
+      border-radius: 50%;
+    }
+    .logo-square {
+      border-radius: 12px;
+    }
+    .logo-landscape {
+      width: 120px;
+      height: 60px;
+      border-radius: 12px;
+    }
+    .logo-portrait {
+      width: 60px;
+      height: 120px;
+      border-radius: 12px;
+    }
   </style>
   </head>
 <body class="font-display">
-<div class="flex justify-center items-start bg-zinc-800 p-4 min-h-screen max-sm:p-0">
+  <!-- Contêiner do Logo Flutuante (NOVO) -->
+  <div id="floating-logo-container" style="display: none;">
+    <img id="floating-logo" src="" alt="Logo">
+  </div>
+
+  <div class="flex justify-center items-start bg-zinc-800 p-4 min-h-screen max-sm:p-0">
   <div class="relative rounded-xl overflow-hidden max-sm:rounded-none" style="width: 390px; height: 844px;" class="max-sm:w-full max-sm:h-[100dvh] max-sm:max-h-none">
-    <!-- Atributo style removido e id adicionado -->
     <div id="background-container" class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Close-up of a relaxing massage session, with hands gently working on a person's back."></div>
     <div class="relative h-full overflow-y-auto z-10">
       <div style="height: 422px;"></div>
@@ -166,6 +209,23 @@ document.addEventListener('DOMContentLoaded', function () {
       const backgroundElement = document.getElementById('background-container');
       if (backgroundElement && data.profile.background_image_url) {
         backgroundElement.style.backgroundImage = `url('${data.profile.background_image_url}')`;
+      }
+
+      // ==========================================================
+      // BLOCO DE CONFIGURAÇÃO DO LOGO FLUTUANTE (NOVO)
+      // Aplica a URL, a visibilidade e a forma do logo.
+      // ==========================================================
+      const logoContainer = document.getElementById('floating-logo-container');
+      const logoImage = document.getElementById('floating-logo');
+
+      if (logoContainer && logoImage && data.logo) {
+        if (data.logo.visible) {
+          logoImage.src = data.logo.url;
+          logoContainer.className = `logo-${data.logo.shape}`;
+          logoContainer.style.display = 'block';
+        } else {
+          logoContainer.style.display = 'none';
+        }
       }
 
       const profileTitleElement = document.getElementById('profile-title');
