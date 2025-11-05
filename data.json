@@ -2,6 +2,8 @@
   "profile": {
     "title": "JMA Terapeuta Holística Integrativa",
     "description": "Massoterapeuta",
+    "background_image_url": "https://raw.githubusercontent.com/brunoscruz2023/vercel-dcard-template01/main/massoterapia1_template01.png
+",
     "address": "Rua Exemplo, 123 - Bairro, Cidade - UF, 00000-000",
     "phone": "5511912345678",
     "whatsapp": "5511912345678"
@@ -41,7 +43,7 @@
   "social_media": [
     {
       "platform": "facebook",
-      "url": "https://www.facebook.com/jannedy.moreiraalves",
+      "url": "https://www.facebook.com/seuperfil",
       "visible": true
     },
     {
@@ -62,10 +64,7 @@
     {
       "platform": "pinterest",
       "url": "https://www.pinterest.com/seuperfil",
-      "visible": false
+      "visible": true
     }
   ]
 }
-
-
-
