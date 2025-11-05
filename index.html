@@ -92,7 +92,6 @@
       <div class="content-with-feather rounded-t-2xl">
         <div class="flex flex-col p-6 pt-5 text-white">
           
-          <!-- Conteúdo dinâmico do perfil -->
           <div class="flex flex-col mb-4">
             <h1 id="profile-title" class="text-white tracking-light text-[32px] font-bold leading-tight"></h1>
             <p id="profile-description" class="text-white/80 text-base font-normal leading-normal pt-1"></p>
@@ -143,10 +142,12 @@
                   </svg>
                 </div>
               </a>
+              <!-- Ícone do Google (Wordmark) substituindo o WhatsApp -->
               <a href="#">
                 <div class="m3-icon-container">
-                  <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12,2A10,10,0,0,0,2,12a9.86,9.86,0,0,0,1.4,5.22L2,22l4.87-1.42A9.9,9.9,0,0,0,12,22a10,10,0,0,0,0-20ZM12,20.5a8.41,8.41,0,0,1-4.32-1.23L7,18.94,4,19.9l1-3.2A8.45,8.45,0,0,1,3.5,12,8.5,8.5,0,0,1,12,3.5,8.5,8.5,0,0,1,20.5,12,8.5,8.5,0,0,1,12,20.5Zm4.83-6.23a2,2,0,0,0-1.42-.87c-.36-.18-2.12-1-2.45-1.16s-.57-.18-.81.18-.93,1.16-1.14,1.4-.42.27-.78.09-1.42-.52-2.7-1.67a10.27,10.27,0,0,1-1.89-2.32s-.3-.36-.12-.54.33-.39.45-.51a1.8,1.8,0,0,0,.3-.54c0-.18-.05-.45-.14-.63s-.81-1.92-1.11-2.63-.59-.6-.81-.6H4.7a1,1,0,0,0-.87.45,3.6,3.6,0,0,0-1.14,2.69,6.1,6.1,0,0,0,1.3,3.55,11.2,11.2,0,0,0,5,4.88,10,10,0,0,0,5.6,1.42,3.32,3.32,0,0,0,2.18-1.52A2.8,2.8,0,0,0,17.22,15Z"></path>
+                  <svg class="h-6 w-6" viewBox="0 0 24 24">
+                    <path d="M22.7 19l-9.1-9.1c-.9-.9-2.37-.9-3.27 0-3.27.9.9 2.37.9 3.27 0 3.27-.9 2.37-.9 3.27L12 23l1.4-1.4c.6.3 1.3.3 2.1.3.2.9 0 1.5-.2 2.1-.3 2.1l.3.9 0 1.5-.2 2.1-.3 2.1L12 23l9.7-9.7c.6-.3 1.3-.3 2.1-.2.9 0 1.5.2 2.1.3 2.1-.3.9 0 1.5-.2 2.1-.3 2.1z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.8 7.8c-.7.7-.7 1.85-.7 2.55 0 .7.7 1.85.7 2.55 0 .7-.7 1.85-.7 2.55 0 .7-.7-1.85-.7-2.55 0-.7-.7-1.85-.7-2.55z"/>
                   </svg>
                 </div>
               </a>
@@ -159,93 +160,111 @@
 </div>
 
 <script>
-// 1. FONTE DE DADOS DO PERFIL
-const profileData = {
-  title: "JMA Terapeuta Holística Integrativa",
-  description: "Massoterapeuta"
-};
-
-// 2. FONTE DE DADOS DOS SERVIÇOS
-const servicesData = [
-  {
-    title: "Massagem Relaxante",
-    description: "Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente."
-  },
-  {
-    title: "Massagem Terapêutica",
-    description: "Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade."
-  },
-  {
-    title: "Shiatsu",
-    description: "Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural."
-  },
-  {
-    title: "Reiki",
-    description: "Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital."
-  },
-  {
-    title: "Aromaterapia",
-    description: "Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente."
-  },
-  {
-    title: "Reflexologia",
-    description: "Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral."
-  }
-];
-
 document.addEventListener('DOMContentLoaded', function () {
-  // 3. POVOAR O PERFIL DINÂMICO
-  const profileTitleElement = document.getElementById('profile-title');
-  const profileDescriptionElement = document.getElementById('profile-description');
 
-  if (profileTitleElement) {
-    profileTitleElement.textContent = profileData.title;
-  }
-  if (profileDescriptionElement) {
-    profileDescriptionElement.textContent = profileData.description;
-  }
+  /* ==========================================================
+   * BLOCO DE DADOS DEPRECATED
+   * Motivo: Dados movidos para o arquivo 'data.json' para separação.
+   * Manter para rollback emergencial. Deletar após testes finais.
+   * ========================================================== */
+  /*
+  const profileData = {
+    title: "JMA Terapeuta Holística Integrativa",
+    description: "Massoterapeuta"
+  };
 
-  // 4. LÓGICA DINÂMICA PARA O ACCORDION
-  const servicesListContainer = document.getElementById('services-list-container');
-
-  function createAccordionItem(item) {
-    return `
-      <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
-        <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
-          <span class="text-white text-base font-medium">${item.title}</span>
-          <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
-        </button>
-        <div class="accordion-content">
-          <div class="px-4 pb-4">
-            <p class="text-white/80 text-sm my-0 leading-tight">${item.description}</p>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  if (servicesListContainer) {
-    servicesData.forEach(item => {
-      servicesListContainer.innerHTML += createAccordionItem(item);
-    });
-  }
-
-  // 5. LÓGICA DE EVENTOS (Event Delegation)
-  document.addEventListener('click', (event) => {
-    const header = event.target.closest('.accordion-header');
-    if (!header) return;
-
-    const accordionItem = header.parentElement;
-    const isOpen = accordionItem.classList.contains('is-open');
-
-    document.querySelectorAll('.accordion-item').forEach(item => {
-      item.classList.remove('is-open');
-    });
-
-    if (!isOpen) {
-      accordionItem.classList.add('is-open');
+  const servicesData = [
+    {
+      title: "Massagem Relaxante",
+      description: "Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente."
+    },
+    {
+      title: "Massagem Terapêutica",
+      description: "Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade."
+    },
+    {
+      title: "Shiatsu",
+      description: "Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural."
+    },
+    {
+      title: "Reiki",
+      description: "Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital."
+    },
+    {
+      title: "Aromaterapia",
+      description: "Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente."
+    },
+    {
+      title: "Reflexologia",
+      description: "Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral."
     }
-  });
+  ];
+  */
+
+  /* ==========================================================
+   * BLOCO DE CARREGAMENTO DE DADOS (NOVO)
+   * Carrega perfil e serviços dinamicamente do arquivo 'data.json'.
+   * ========================================================== */
+  fetch('data.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Erro ao carregar o arquivo data.json");
+      }
+      return response.json();
+    })
+    .then(data => {
+      const profileTitleElement = document.getElementById('profile-title');
+      const profileDescriptionElement = document.getElementById('profile-description');
+
+      if (profileTitleElement) {
+        profileTitleElement.textContent = data.profile.title;
+      }
+      if (profileDescriptionElement) {
+        profileDescriptionElement.textContent = data.profile.description;
+      }
+
+      const servicesListContainer = document.getElementById('services-list-container');
+
+      function createAccordionItem(item) {
+        return `
+          <div class="accordion-item flex flex-col w-full items-center justify-between rounded-lg bg-white/10">
+            <button class="accordion-header flex w-full items-center justify-between p-4 text-left">
+              <span class="text-white text-base font-medium">${item.title}</span>
+              <span class="material-symbols-outlined text-white/70 accordion-icon">chevron_right</span>
+            </button>
+            <div class="accordion-content">
+              <div class="px-4 pb-4">
+                <p class="text-white/80 text-sm my-0 leading-tight">${item.description}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (servicesListContainer) {
+        data.services.forEach(item => {
+          servicesListContainer.innerHTML += createAccordionItem(item);
+        });
+      }
+
+      document.addEventListener('click', (event) => {
+        const header = event.target.closest('.accordion-header');
+        if (!header) return;
+
+        const accordionItem = header.parentElement;
+        const isOpen = accordionItem.classList.contains('is-open');
+
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('is-open');
+        });
+
+        if (!isOpen) {
+          accordionItem.classList.add('is-open');
+        }
+      });
+    })
+    .catch(error => console.error('Falha na execução:', error));
+
 });
 </script>
 
