@@ -109,6 +109,10 @@
               <span class="truncate">WhatsApp</span>
             </a>
           </div>
+
+          <!-- Elemento de Endereço Adicionado -->
+          <p id="profile-address" class="text-white/80 text-sm font-normal leading-normal pt-2 flex items-center gap-1"></p>
+
           <div class="my-2"></div>
           <div>
             <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-2">Serviços</h3>
@@ -179,6 +183,16 @@ document.addEventListener('DOMContentLoaded', function () {
       if (whatsappButton && data.profile.whatsapp) {
         whatsappButton.href = `https://wa.me/${data.profile.whatsapp}`;
         whatsappButton.target = '_blank';
+      }
+      
+      // Lógica para o endereço (NOVO)
+      const addressElement = document.getElementById('profile-address');
+      if (addressElement && data.profile.address) {
+        const encodedAddress = encodeURIComponent(data.profile.address);
+        addressElement.innerHTML = `<a href="https://www.google.com/maps/search/?api=1&query=${encodedAddress}" target="_blank" class="text-white/80 hover:text-white transition-colors">
+                                      <span class="material-symbols-outlined align-middle text-sm mr-1">location_on</span>
+                                      ${data.profile.address}
+                                    </a>`;
       }
 
       const servicesListContainer = document.getElementById('services-list-container');
