@@ -2,6 +2,7 @@
   "profile": {
     "title": "JMA Terapeuta Holística Integrativa",
     "description": "Massoterapeuta",
+    "address": "Rua Exemplo, 123 - Bairro, Cidade - UF, 00000-000",
     "phone": "5511912345678",
     "whatsapp": "5511912345678"
   },
@@ -65,5 +66,6 @@
     }
   ]
 }
+
 
 
