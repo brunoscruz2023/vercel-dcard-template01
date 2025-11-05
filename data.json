@@ -1,0 +1,32 @@
+{
+  "profile": {
+    "title": "JMA Terapeuta Holística Integrativa",
+    "description": "Massoterapeuta"
+  },
+  "services": [
+    {
+      "title": "Massagem Relaxante",
+      "description": "Técnicas suaves para aliviar o estresse e a tensão muscular, promovendo profundo relaxamento e bem-estar. Ideal para restaurar o equilíbrio do corpo e da mente."
+    },
+    {
+      "title": "Massagem Terapêutica",
+      "description": "Foco em tratar dores musculares, lesões e tensões específicas. Utiliza técnicas mais profundas para liberar nós musculares e melhorar a mobilidade."
+    },
+    {
+      "title": "Shiatsu",
+      "description": "Técnica japonesa que aplica pressão em pontos específicos do corpo para equilibrar a energia (Qi). Alivia dores, reduz o estresse e estimula a cura natural."
+    },
+    {
+      "title": "Reiki",
+      "description": "Uma técnica de cura energética que canaliza energia universal através das mãos. Promove relaxamento profundo, alivia dores emocionais e restaura o equilíbrio vital."
+    },
+    {
+      "title": "Aromaterapia",
+      "description": "Uso de óleos essenciais extraídos de plantas para melhorar o bem-estar físico e emocional. Os aromas ajudam a acalmar, energizar ou equilibrar o corpo e a mente."
+    },
+    {
+      "title": "Reflexologia",
+      "description": "Baseia-se na aplicação de pressão em pontos reflexos nos pés, mãos e orelhas, que correspondem a órgãos e sistemas do corpo. Estimula a cura e o equilíbrio geral."
+    }
+  ]
+}
