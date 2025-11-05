@@ -61,7 +61,8 @@
     {
       "platform": "pinterest",
       "url": "https://www.pinterest.com/seuperfil",
-      "visible": true
+      "visible": false
     }
   ]
 }
+
