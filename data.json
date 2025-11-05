@@ -69,10 +69,11 @@
    "logo": {
     "shape_options": "round, square, landscape, portrait",
     "visible": true,
-    "shape": "round",
+    "shape": "landscape",
     "url": "https://raw.githubusercontent.com/brunoscruz2023/vercel-dcard-template01/main/logo.png"
   }
 }
+
 
 
 
