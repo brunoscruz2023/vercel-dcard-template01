@@ -65,8 +65,15 @@
       "url": "https://www.pinterest.com/seuperfil",
       "visible": false
     }
-  ]
+  ],
+   "logo": {
+    "shape_options": "round, square, landscape, portrait",
+    "visible": true,
+    "shape": "round",
+    "url": "https://raw.githubusercontent.com/brunoscruz2023/vercel-dcard-template01/main/logo.png"
+  }
 }
+
 
 
 
