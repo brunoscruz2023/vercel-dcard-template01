@@ -92,6 +92,7 @@
       width: 80px;
       height: 80px;
       transition: transform 0.2s ease-in-out;
+      overflow: hidden; /* CORRIGIDO: Adicionado para cortar a imagem na forma do contêiner */
     }
     #floating-logo-container:hover {
       transform: scale(1.1);
@@ -101,7 +102,7 @@
       height: 100%;
       object-fit: cover;
       background-color: white;
-      padding: 1px; /* CORRIGIDO: Borda mais fina possível */
+      padding: 1px;
       box-sizing: border-box;
     }
     /* Classes para as formas do logo (CORRIGIDO) */
