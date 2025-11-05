@@ -120,35 +120,8 @@
           <div class="my-2"></div>
           <div class="mt-auto min-h-[200px]">
             <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3 pt-2">Redes Sociais</h3>
-            <div class="flex items-center justify-center gap-6">
-              <a id="facebook-link" href="#">
-                <div class="m3-icon-container">
-                  <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </a>
-              <a id="instagram-link" href="#">
-                <div class="m3-icon-container">
-                  <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
-                  </svg>
-                </div>
-              </a>
-              <a id="linkedin-link" href="#">
-                <div class="m3-icon-container">
-                  <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.06 2.94a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-18zM8.06 19.44H5.06V9.94h3v9.5zm-1.5-10.94a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zm11 10.94h-3v-4.63c0-1.1-.02-2.5-1.52-2.5-1.53 0-1.76 1.19-1.76 2.42v4.71H8.31V9.94h2.88v1.31h.04c.4-.76 1.37-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.6v5.14z"></path>
-                  </svg>
-                </div>
-              </a>
-              <a id="google-link" href="#">
-                <div class="m3-icon-container">
-                  <svg class="h-6 w-6" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
-                  </svg>
-                </div>
-              </a>
+            <div id="social-links-container" class="flex items-center justify-center gap-6">
+              <!-- Os ícones das redes sociais serão inseridos aqui pelo JavaScript -->
             </div>
           </div>
         </div>
@@ -208,21 +181,6 @@ document.addEventListener('DOMContentLoaded', function () {
         whatsappButton.target = '_blank';
       }
 
-      const socialLinks = {
-        facebook: document.getElementById('facebook-link'),
-        instagram: document.getElementById('instagram-link'),
-        linkedin: document.getElementById('linkedin-link'),
-        google: document.getElementById('google-link')
-      };
-
-      for (const platform in socialLinks) {
-        const linkElement = socialLinks[platform];
-        if (linkElement && data.social_media[platform]) {
-          linkElement.href = data.social_media[platform];
-          linkElement.target = '_blank';
-        }
-      }
-
       const servicesListContainer = document.getElementById('services-list-container');
 
       function createAccordionItem(item) {
@@ -243,9 +201,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (servicesListContainer) {
         data.services.forEach(item => {
-          // Apenas cria o item se a propriedade 'visible' for true
           if (item.visible) {
             servicesListContainer.innerHTML += createAccordionItem(item);
+          }
+        });
+      }
+
+      // ==========================================================
+      // BLOCO DE GERAÇÃO DE REDES SOCIAIS (NOVO)
+      // Mapa de ícones e função para criar os links dinamicamente.
+      // ==========================================================
+      const socialIcons = {
+        facebook: `<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>`,
+        instagram: `<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>`,
+        linkedin: `<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.06 2.94a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-18zM8.06 19.44H5.06V9.94h3v9.5zm-1.5-10.94a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zm11 10.94h-3v-4.63c0-1.1-.02-2.5-1.52-2.5-1.53 0-1.76 1.19-1.76 2.42v4.71H8.31V9.94h2.88v1.31h.04c.4-.76 1.37-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.6v5.14z"/></svg>`,
+        google: `<svg class="h-6 w-6" viewBox="0 0 24 24"><path fill="currentColor" d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>`,
+        pinterest: `<svg class="h-6 w-6" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>`
+      };
+
+      function createSocialLink(item) {
+        const iconSvg = socialIcons[item.platform];
+        if (!iconSvg) return '';
+
+        return `
+          <a href="${item.url}" target="_blank">
+            <div class="m3-icon-container">
+              ${iconSvg}
+            </div>
+          </a>
+        `;
+      }
+
+      // ==========================================================
+      // BLOCO DE RENDERIZAÇÃO DAS REDES SOCIAIS (NOVO)
+      // Renderiza os links dinamicamente com base na visibilidade.
+      // ==========================================================
+      const socialLinksContainer = document.getElementById('social-links-container');
+      if (socialLinksContainer) {
+        data.social_media.forEach(item => {
+          if (item.visible) {
+            socialLinksContainer.innerHTML += createSocialLink(item);
           }
         });
       }
